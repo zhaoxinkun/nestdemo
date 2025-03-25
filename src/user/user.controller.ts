@@ -12,7 +12,7 @@ export class UserController {
   }
 
   @Post()
-  create(@Body() user: any) {
+  create(@Body() user: userInterface | userInterface[]): Promise<userInterface | userInterface[]> {
     return this.userService.create(user);
   }
 }
